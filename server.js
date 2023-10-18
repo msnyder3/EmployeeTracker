@@ -51,8 +51,7 @@ function startPrompt() {
     })
  };
 
-// View all departments
-function viewAllDepartments() {
+function viewDepartments() {
     const sql = `SELECT * FROM department`;
     db.query(sql, (err, result) => {
         if (err) {
@@ -64,8 +63,7 @@ function viewAllDepartments() {
     });
 };
 
-// View all roles
-function viewAllRoles() {
+function viewRoles() {
     const sql = `SELECT * FROM role`;
     db.query(sql, (err, result) => {
         if (err) {
@@ -77,8 +75,7 @@ function viewAllRoles() {
     });
 };
 
-// View all employees
-function viewAllEmployees() {
+function viewEmployees() {
     const sql = `SELECT employee.id,
                 employee.first_name,
                 employee.last_name,
@@ -98,7 +95,6 @@ function viewAllEmployees() {
     });
 };
 
-// Add departments
 function addDepartment() {
     inquirer.prompt([
         {
@@ -127,7 +123,6 @@ function addDepartment() {
 });
 };
 
-// Add a role
 function addRole() {
     inquirer.prompt([
         {
